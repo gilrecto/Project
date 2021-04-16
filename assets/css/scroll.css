@@ -1,0 +1,130 @@
+@import url(https://fonts.googleapis.com/css?family=Cabin);
+
+.scroll {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  z-index: 9;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.mouse {
+  display: block;
+  width: 28px;
+  height: 48px;
+  border-radius: 11px 11px 15px 15px;
+  border: 1px solid #fff;
+  z-index: 9999;
+}
+
+.mouse span {
+  display: block;
+  margin: 6px auto;
+  width: 2px;
+  height: 5px;
+  border-radius: 4px;
+  background: #fff;
+  border: 1px solid transparent;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation: scroll 2s ease-out infinite;
+  animation: scroll 2s ease-out infinite;
+}
+
+.scroll p {
+  margin-top: 20px;
+  letter-spacing: 2px;
+  font-family: "Cabin", sans-serif;
+  -webkit-animation: colorText 5s ease-out infinite;
+  animation: colorText 5s ease-out infinite;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+
+@-webkit-keyframes colorText {
+  21% {
+    color: #4e5559;
+  }
+
+  30% {
+    color: #ffffff;
+  }
+
+  51% {
+    color: #4e5559;
+  }
+
+  60% {
+    color: #ffffff;
+  }
+
+  81% {
+    color: #4e5559;
+  }
+
+  90% {
+    color: #ffffff;
+  }
+}
+
+@keyframes colorText {
+  21% {
+    color: #4e5559;
+  }
+
+  30% {
+    color: #ffffff;
+  }
+
+  51% {
+    color: #4e5559;
+  }
+
+  60% {
+    color: #ffffff;
+  }
+
+  81% {
+    color: #4e5559;
+  }
+
+  90% {
+    color: #ffffff;
+  }
+}

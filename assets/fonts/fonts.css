@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Untitled-Sans-Light";
+  src: url("./untitled-sans-light.eot");
+  src: url("./untitled-sans-light.eot") format("embedded-opentype"),
+    url("./untitled-sans-light.woff2") format("woff2"),
+    url("./untitled-sans-light.woff") format("woff"),
+    url("./untitled-sans-light.ttf") format("truetype"),
+    url("./untitled-sans-light.svg#Untitled-Sans-Light") format("svg");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 700;
+  src: url("./Montserrat-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 600;
+  src: url("./Montserrat-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 500;
+  src: url("./Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 400;
+  src: url("./Montserrat-Regular.ttf");
+}
