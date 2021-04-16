@@ -92,6 +92,7 @@ $('.slideshow-left').slick({
 		$('.section-titles').slick('slickGoTo', nextSlide);
 	}
 
+	$('#nav-menu').collapse('hide');
 	$('.nav-link').removeClass('active');
 	$('.navbar-nav').find(`[data-href="${nxtSlide.dataset.id}"]`).addClass('active');
 
