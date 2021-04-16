@@ -111,6 +111,52 @@ h5 {
   width: 100%;
 }
 
+.navbar-toggler {
+  min-height: 30px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  display: block;
+  width: 30px;
+  height: 1px;
+  background-color: #fff;
+  position: relative;
+  transition: all .3s linear;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  transform: rotate(45deg);
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 1px;
+  background-color: #fff;
+  position: absolute;
+  top: 7px;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+  display: none;
+}
+
+.navbar-toggler-icon::before {
+  top: -7px;
+  width: 30px;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+  transform: rotate(-90deg);
+  top: 0px;
+}
+
 /* End Header styles*/
 
 /* Sidebar styles */
@@ -267,6 +313,7 @@ h5 {
   left: 50%;
   min-width: 101%;
   min-height: 101%;
+  object-fit: cover;
   transform: translate(-50%, -50%);
 }
 
@@ -290,7 +337,7 @@ h5 {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: auto;
+  width: 100%;
   z-index: 9;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -328,3 +375,39 @@ h5 {
 }
 
 /* End Footer styles */
+
+/* Responsive */
+@media only screen and (max-width: 1200px) {
+  #main-content {
+    overflow: hidden;
+  }
+
+  #proj-sidebar {
+    max-width: 280px;
+    left: -280px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  h2 {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  h2 {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  h2 {
+    font-size: 2rem;
+  }
+}

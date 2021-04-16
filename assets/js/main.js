@@ -70,6 +70,12 @@ $('.slideshow-left').slick({
 	touchMove: false,
 	speed: 1000,
 	cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+	responsive: [{
+		breakpoint: 1025,
+		settings: {
+			swipe: true,
+		}
+	}]
 }).on('beforeChange', (event, slick, currentSlide, nextSlide) => {
 	let slides = slick.$slides;
 	let nxtSlide = slides.get(nextSlide);
@@ -112,11 +118,18 @@ $('.slideshow-left').slick({
 $('.slideshow-right .section-slides').slick({
 	swipe: false,
 	vertical: true,
+	verticalSwiping: true,
 	arrows: false,
 	infinite: false,
 	speed: 950,
 	cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
-	initialSlide: maxItems - 1
+	initialSlide: maxItems - 1,
+	responsive: [{
+		breakpoint: 1025,
+		settings: {
+			swipe: true,
+		}
+	}]
 });
 
 titleSlider.slick({
