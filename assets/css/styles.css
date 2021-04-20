@@ -238,6 +238,7 @@ h5 {
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   transform: translateY(-50%);
+  z-index: 200;
 }
 
 #main-content .slick-dots li {
@@ -288,11 +289,12 @@ h5 {
 
 #main-content {
   height: 100vh;
+  overflow: hidden;
 }
 
 .content-wrapper {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   left: 0;
   width: 100vw;
@@ -340,7 +342,7 @@ h5 {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100%;
+  width: auto;
   z-index: 9;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -377,6 +379,20 @@ h5 {
   letter-spacing: 1px;
 }
 
+.circle {
+  background: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: fixed;
+  transform: translate3d(-50%, -50%, 0);
+  transition: transform 2s cubic-bezier(.02, 1.23, .79, 1.08);
+  mix-blend-mode: difference;
+  z-index: 10000;
+  pointer-events: none;
+  ;
+}
+
 /* End Footer styles */
 
 /* Responsive */
@@ -409,6 +425,10 @@ h5 {
 
   #nav-menu .navbar-nav a::after {
     content: unset;
+  }
+
+  .section-titles {
+    width: 100%;
   }
 }
 

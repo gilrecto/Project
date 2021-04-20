@@ -74,6 +74,7 @@ $('.slideshow-left').slick({
 		breakpoint: 1025,
 		settings: {
 			swipe: true,
+			dots: false
 		}
 	}]
 }).on('beforeChange', (event, slick, currentSlide, nextSlide) => {
@@ -138,6 +139,7 @@ titleSlider.slick({
 	infinite: false,
 	dots: false,
 	arrows: false,
+	slideToShow: 1,
 	swipe: false,
 	speed: 900,
 	cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
@@ -180,4 +182,41 @@ $(window).on('keydown', (e) => {
 			slider.slick('slickNext');
 			break;
 	}
+});
+
+let hoverable = $('a, button, .scroll');
+let circle = $('.circle');
+let circWidth = circle.width();
+let circHeight = circle.height();
+
+$(document).on('mousemove', (e) => {
+	let x = e.clientX;
+	let y = e.clientY;
+	let newPosX = x - 30;
+	let newPosY = y - 30;
+
+	circle.css({
+		transform: `translate3d(${newPosX}px,${newPosY}px,0px)`,
+	});
+});
+
+hoverable.mouseenter((e) => {
+	circle.css({
+		width: circWidth * 2,
+		height: circHeight * 2,
+		transition: 'all .3s linear',
+	});
+});
+
+hoverable.mouseleave((e) => {
+	circle.css({
+		width: circWidth,
+		height: circHeight,
+	});
+
+	setTimeout(() => {
+		circle.css({
+			transition: 'transform 2s cubic-bezier(.02, 1.23, .79, 1.08)',
+		});
+	}, 500);
 });
