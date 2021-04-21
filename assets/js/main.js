@@ -186,37 +186,74 @@ $(window).on('keydown', (e) => {
 
 let hoverable = $('a, button, .scroll');
 let circle = $('.circle');
-let circWidth = circle.width();
-let circHeight = circle.height();
 
-$(document).on('mousemove', (e) => {
-	let x = e.clientX;
-	let y = e.clientY;
+$(document).on('load', (e) => {
+	console.log(e, $(this));
+});
+
+$(document).on('mousemove click', (e) => {
+	let x = e.pageX;
+	let y = e.pageY;
 	let newPosX = x - 30;
 	let newPosY = y - 30;
 
 	circle.css({
-		transform: `translate3d(${newPosX}px,${newPosY}px,0px)`,
+		left: newPosX,
+		top: newPosY
 	});
+	circle.show();
 });
 
 hoverable.mouseenter((e) => {
+	let target = e.target;
+	let tag = target.localName;
+	let text = target.textContent;
+
+	if (target.classList[0] == 'nav-link' || tag == 'button') {
+		circle.append(`<p>View ${text}</p>`);
+		circle.css({
+			backgroundColor: '#01a8f9',
+			mixBlendMode: 'unset',
+		});
+	} else if (target.className == 'scroll' || target.className == 'mouse') {
+		circle.append(`<p style="color: #000; font-size: 5px;" ><i class="bi bi-arrow-down d-block"></i> Scroll Down</p>`);
+		circle.css({
+			borderColor: '#fff',
+			mixBlendMode: 'unset',
+		});
+	} else if (target.className == 'proj-link') {
+		circle.append(`<p>View Project</p>`);
+		circle.css({
+			backgroundColor: '#01a8f9',
+			mixBlendMode: 'unset',
+		});
+	} else {
+		circle.css({
+			backgroundColor: 'transparent',
+			borderColor: '#fff',
+		});
+	}
+
 	circle.css({
-		width: circWidth * 2,
-		height: circHeight * 2,
+		transform: 'scale(2)',
 		transition: 'all .3s linear',
 	});
+
+	console.log(e, tag)
 });
 
 hoverable.mouseleave((e) => {
+	circle.empty();
 	circle.css({
-		width: circWidth,
-		height: circHeight,
+		transform: 'scale(1)',
+		backgroundColor: '#fff',
+		mixBlendMode: 'difference',
+		borderColor: 'transparent',
 	});
 
 	setTimeout(() => {
 		circle.css({
-			transition: 'transform 2s cubic-bezier(.02, 1.23, .79, 1.08)',
+			transition: 'all 3s cubic-bezier(.02, 1.23, .79, 1.08)',
 		});
 	}, 500);
 });

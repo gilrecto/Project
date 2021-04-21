@@ -44,6 +44,7 @@
   font-family: "Cabin", sans-serif;
   -webkit-animation: colorText 5s ease-out infinite;
   animation: colorText 5s ease-out infinite;
+  pointer-events: none;
 }
 
 @keyframes scroll {

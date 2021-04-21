@@ -380,18 +380,37 @@ h5 {
 }
 
 .circle {
+  display: none;
   background: #fff;
   width: 60px;
   height: 60px;
+  border: 1px solid transparent;
   border-radius: 50%;
   position: fixed;
-  transform: translate3d(-50%, -50%, 0);
-  transition: transform 2s cubic-bezier(.02, 1.23, .79, 1.08);
+  top: 50%;
+  left: 50%;
   mix-blend-mode: difference;
   z-index: 10000;
   pointer-events: none;
-  ;
+  transition: all 3s cubic-bezier(.02, 1.23, .79, 1.08);
 }
+
+.circle p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-size: 8px;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.circle p i {
+  font-size: 12px;
+}
+
 
 /* End Footer styles */
 
